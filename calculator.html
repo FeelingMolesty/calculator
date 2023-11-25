@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+
+
+    <!--头颅-->
+    <head>
+        <script>
+            //初始化变量
+            let calculateNumber1 = 0
+            let calculateNumber2 = 0
+            let calculateNumber3 = 0
+            let typingPoolofNumber = ''
+            let calculatingOperator = '' 
+            //初始化函数
+            function calculateExecute(){
+                calculateNumber2 = Number(typingPoolofNumber)
+                if(calculatingOperator === ''){
+                    if(typingPoolofNumber === ''){}else{if(calculateNumber1 === 0){calculateNumber1 = Number(typingPoolofNumber)}}
+                }
+                else if (calculatingOperator === '+'){calculateNumber1 = calculateNumber1 + calculateNumber2; }
+                else if (calculatingOperator === '-'){calculateNumber1 = calculateNumber1 - calculateNumber2; }
+                else if (calculatingOperator === '*'){calculateNumber1 = calculateNumber1 * calculateNumber2; }
+                else if (calculatingOperator === '/'){calculateNumber1 = calculateNumber1 / calculateNumber2; }
+                calculatingOperator = '';
+                calculateNumber2 = 0;
+                typingPoolofNumber = ''
+            } ;
+        </script>
+
+
+
+    </head>
+
+
+
+
+    <!--尸首-->
+    <body>
+        <!--创建 计算器的 数字键-->
+        <button 
+        onclick="typingPoolofNumber = typingPoolofNumber + 1";
+        class="calculatorNumberButtons";>
+            1
+        </button>
+        <button 
+        onclick="typingPoolofNumber = typingPoolofNumber + 2";
+        class="calculatorNumberButtons";>
+            2
+        </button>
+        <button 
+        onclick="typingPoolofNumber = typingPoolofNumber + 3";
+        class="calculatorNumberButtons";>
+            3
+        </button>
+        <button 
+        onclick="typingPoolofNumber = typingPoolofNumber + 4";
+        class="calculatorNumberButtons";>
+            4
+        </button>
+        <button 
+        onclick="typingPoolofNumber = typingPoolofNumber + 5";
+        class="calculatorNumberButtons";>
+            5
+        </button>
+        <button 
+        onclick="typingPoolofNumber = typingPoolofNumber + 6";
+        class="calculatorNumberButtons";>
+            6
+        </button>
+        <button 
+        onclick="typingPoolofNumber = typingPoolofNumber + 7";
+        class="calculatorNumberButtons";>
+            7
+        </button>
+        <button 
+        onclick="typingPoolofNumber = typingPoolofNumber + 8";
+        class="calculatorNumberButtons";>
+            8
+        </button>
+        <button 
+        onclick="typingPoolofNumber = typingPoolofNumber + 9";
+        class="calculatorNumberButtons";>
+            9
+        </button>
+        <button 
+        onclick="typingPoolofNumber = typingPoolofNumber + 0";
+        class="calculatorNumberButtons";>
+            0
+        </button>
+        <!--创建 计算器的 数字键 END-->
+
+        <!--创建 计算器的 计算符键-->
+        <button 
+            onclick="
+            calculateExecute();
+            calculatingOperator = '+'
+            ";
+        class="calculatorSymbolButtons";>
+            +
+        </button>
+
+        <button 
+            onclick="
+            calculateExecute();
+            calculatingOperator = '-'
+            ";
+        class="calculatorSymbolButtons";>
+            -
+        </button>
+
+        <button 
+            onclick="
+            calculateExecute();
+            calculatingOperator = '*'
+            ";
+        class="calculatorSymbolButtons";>
+            ×
+        </button>
+
+        <button 
+            onclick="
+            calculateExecute();
+            calculatingOperator = '/'
+            ";
+        class="calculatorSymbolButtons";>
+            ÷
+        </button>
+
+        <button 
+            onclick="
+            calculateExecute();
+            calculatingOperator = ''
+            ";
+        class="calculatorSymbolButtons";>
+            =
+        </button>
+
+
+
+        <!--Debug 相关-->
+        <button onclick="alert('typingpool=' + typingPoolofNumber +
+        '\ncalculateNumber1=' + calculateNumber1 +
+        '\ncalculateNumber2=' + calculateNumber2 +
+        '\ncalculateNumber3=' + calculateNumber3
+        )">
+            var check
+        </button>
+
+
+    </body>
+
+
+
+
+</html>
