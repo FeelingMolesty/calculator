@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+
+
+    <!--头颅-->
+    <head>
+        <script>
+            //初始化变量
+            let calculateNumber1 = 0
+            let calculateNumber2 = 0
+            let calculateNumber3 = 0
+            let typingPoolofNumber = ''
+            let calculatingOperator = '' 
+            //初始化函数
+            function calculateExecute(){
+                //没有输入操作数时，操作数=原数值
+                if(typingPoolofNumber === ''){
+                    calculateNumber2 = calculateNumber1
+                }else{
+                    calculateNumber2 = Number(typingPoolofNumber)
+                }
+                //在第一次按计算符时，如果有输入的数，则把其设为被操作数。
+                if(calculatingOperator === ''){
+                    if(typingPoolofNumber === ''){}else{if(calculateNumber1 === 0){calculateNumber1 = Number(typingPoolofNumber)}}
+                }
+                
+                else if (calculatingOperator === '+'){calculateNumber1 = calculateNumber1 + calculateNumber2; }
+                else if (calculatingOperator === '-'){calculateNumber1 = calculateNumber1 - calculateNumber2; }
+                else if (calculatingOperator === '*'){calculateNumber1 = calculateNumber1 * calculateNumber2; }
+                else if (calculatingOperator === '/'){calculateNumber1 = calculateNumber1 / calculateNumber2; }
+                //calculatingOperator = '';
+                calculateNumber2 = calculateNumber1;
+                typingPoolofNumber = '';
+                reflashCalculatorDisplay();
+            } ;
+
+            function calculatorReset(){
+                calculateNumber1 = 0
+                calculateNumber2 = 0
+                calculateNumber3 = 0
+                typingPoolofNumber = ''
+                calculatingOperator = ''
+            }
+
+            function reflashCalculatorDisplay(){
+                document.querySelector('.calculatorDisplay').innerHTML = typingPoolofNumber === '' ? calculateNumber1.toString() : typingPoolofNumber
+
+            }
+
+
+
+
+        </script>
+
+
+
+    </head>
+
+
+
+
+    <!--尸首-->
+    <body>
+        <!--创建 计算器的 数字键-->
+        <button 
+        onclick="typingPoolofNumber = typingPoolofNumber + 1;reflashCalculatorDisplay()";
+        class="calculatorNumberButtons";>
+            1
+        </button>
+        <button 
+        onclick="typingPoolofNumber = typingPoolofNumber + 2;reflashCalculatorDisplay()";
+        class="calculatorNumberButtons";>
+            2
+        </button>
+        <button 
+        onclick="typingPoolofNumber = typingPoolofNumber + 3;
+        reflashCalculatorDisplay()";
+        class="calculatorNumberButtons";>
+            3
+        </button>
+        <button 
+        onclick="typingPoolofNumber = typingPoolofNumber + 4;reflashCalculatorDisplay()";
+        class="calculatorNumberButtons";>
+            4
+        </button>
+        <button 
+        onclick="typingPoolofNumber = typingPoolofNumber + 5;reflashCalculatorDisplay()";
+        class="calculatorNumberButtons";>
+            5
+        </button>
+        <button 
+        onclick="typingPoolofNumber = typingPoolofNumber + 6;reflashCalculatorDisplay()";
+        class="calculatorNumberButtons";>
+            6
+        </button>
+        <button 
+        onclick="typingPoolofNumber = typingPoolofNumber + 7;reflashCalculatorDisplay()";
+        class="calculatorNumberButtons";>
+            7
+        </button>
+        <button 
+        onclick="typingPoolofNumber = typingPoolofNumber + 8;reflashCalculatorDisplay()";
+        class="calculatorNumberButtons";>
+            8
+        </button>
+        <button 
+        onclick="typingPoolofNumber = typingPoolofNumber + 9;reflashCalculatorDisplay()";
+        class="calculatorNumberButtons";>
+            9
+        </button>
+        <button 
+        onclick="typingPoolofNumber = typingPoolofNumber + 0;reflashCalculatorDisplay()";
+        class="calculatorNumberButtons";>
+            0
+        </button>
+        <button 
+        onclick="typingPoolofNumber = typingPoolofNumber + '.';reflashCalculatorDisplay()";
+        class="calculatorNumberButtons";>
+            .
+        </button>
+        <!--创建 计算器的 数字键 END-->
+
+        <!--创建 计算器的 计算符键-->
+        <button 
+            onclick="
+            calculateExecute();
+            calculatingOperator = '+'
+            ";
+        class="calculatorSymbolButtons";>
+            +
+        </button>
+
+        <button 
+            onclick="
+            calculateExecute();
+            calculatingOperator = '-'
+            ";
+        class="calculatorSymbolButtons";>
+            -
+        </button>
+
+        <button 
+            onclick="
+            calculateExecute();
+            calculatingOperator = '*'
+            ";
+        class="calculatorSymbolButtons";>
+            ×
+        </button>
+
+        <button 
+            onclick="
+            calculateExecute();
+            calculatingOperator = '/'
+            ";
+        class="calculatorSymbolButtons";>
+            ÷
+        </button>
+
+        <button 
+            onclick="
+            calculateExecute();
+            calculatingOperator = ''
+            ";
+        class="calculatorSymbolButtons";>
+            =
+        </button>
+
+        <button 
+            onclick="
+            calculatorReset();
+            calculatingOperator = ''
+            ";
+        class="calculatorSymbolButtons";>
+            清零
+        </button>
+        <!--创建 计算器的 计算符键 END-->
+
+        <!--创建 计算器的 显示屏-->
+        <p class="calculatorDisplay">
+            <br> 0
+        </p>
+
+
+
+        <!--Debug 相关-->
+        <button onclick="alert('typingpool=' + typingPoolofNumber +
+        '\ncalculateNumber1=' + calculateNumber1 +
+        '\ncalculateNumber2=' + calculateNumber2 +
+        '\ncalculateNumber3=' + calculateNumber3
+        )">
+            var check
+        </button>
+
+
+    </body>
+
+
+
+
+</html>
